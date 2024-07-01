@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>אתר מתכונים שיתופי</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+    <div id="main-content">
+        <header>
+            <h1>VERY FOOD</h1>
+            <nav>
+                <a href="#" id="all-recipes-link">כל המתכונים</a>
+                <a href="#" id="my-recipes-link">המתכונים שלי</a>
+                <a href="#" id="login-link">התחברות</a>
+                <a href="#" id="logout-link" style="display: none;">התנתקות</a>
+            </nav>
+        </header>
+
+        <main>
+            <section id="all-recipes-section">
+                <div id="filters">
+                    <label for="search-filter">חיפוש לפי שם:</label>
+                    <input type="text" id="search-filter" name="search-filter">
+                    
+                    <label for="category-filter">קטגוריה:</label>
+                    <select id="category-filter" name="category-filter">
+                        <option value="all">הכל</option>
+                        <option value="breads">לחמים</option>
+                        <option value="cakes">עוגות</option>
+                        <option value="main-dishes">מנות עיקריות</option>
+                        <option value="sides">תוספות</option>
+                        <option value="other">אחר</option>
+                    </select>
+                    
+                    <label for="level-filter">רמת הכנה:</label>
+                    <select id="level-filter" name="level-filter">
+                        <option value="all">הכל</option>
+                        <option value="easy">קל</option>
+                        <option value="medium">בינוני</option>
+                        <option value="hard">קשה</option>
+                    </select>
+                    
+                    <button id="apply-filters">הפעל סינון</button>
+                </div>
+                
+                <div id="recipes-list"></div>
+            </section>
+
+            <section id="my-recipes-section" style="display: none;">
+                <div id="my-recipes-list"></div>
+            </section>
+            <button id="add-recipe-button">+</button>
+            
+            <section id="recipe-form-section" style="display: none;">
+                <h2>הוסף/ערוך מתכון</h2>
+                <form id="recipe-form">
+                    <label for="recipe-name">שם מתכון:</label>
+                    <input type="text" id="recipe-name" name="recipe-name" required>
+                    <input type="hidden" id="recipe-id" name="recipe-id">
+                    <label for="ingredients">מצרכים:</label>
+                    <textarea id="ingredients" name="ingredients" required></textarea>
+            
+                    <label for="level">רמת קושי:</label>
+                    <select id="level" name="level" required>
+                        <option value="easy">קל</option>
+                        <option value="medium">בינוני</option>
+                        <option value="hard">קשה</option>
+                    </select>
+            
+                    <label for="category">קטגוריה:</label>
+                    <select id="category" name="category" required>
+                        <option value="breads">לחמים</option>
+                        <option value="cakes">עוגות</option>
+                        <option value="main-dishes">מנות עיקריות</option>
+                        <option value="sides">תוספות</option>
+                        <option value="other">אחר</option>
+                    </select>
+            
+                    <label for="instructions">הוראות:</label>
+                    <textarea id="instructions" name="instructions" required></textarea>
+                    <label for="recipe-image">תמונה:</label>
+                    <input type="file" id="recipe-image" name="recipe-image">
+                    
+                    <button type="submit">שמור מתכון</button>
+                </form>
+            </section>
+
+            <section id="recipe-detail-section" style="display: none;">
+                <h2></h2>
+                <p><strong>מצרכים:</strong> <span id="recipe-ingredients"></span></p>
+                <p><strong>רמת קושי:</strong> <span id="recipe-level"></span></p>
+                <h3>הוראות:</h3>
+                <p id="recipe-instructions" style="white-space: pre-line;"></p>
+                <button id="back-to-recipes">חזור למתכונים</button>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

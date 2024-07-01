@@ -1,0 +1,345 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    direction: rtl;
+    text-align: right;
+}
+
+header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+main {
+    padding: 20px;
+}
+
+h2 {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+
+form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+form input, form select, form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+form button {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+form button:hover {
+    background-color: #555;
+}
+
+#recipes-list, #my-recipes-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+    list-style: none;
+}
+
+.recipe-item {
+    border: 1px solid #ccc;
+    padding: 20px;
+    margin: 10px;
+    width: 300px;
+    text-align: center;
+    box-sizing: border-box;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.recipe-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-item img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+
+}
+
+
+.recipe-item h3 {
+    font-size: 24px;
+    margin: 10px 0;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.edit-recipe-button, .delete-recipe-button {
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    margin: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.edit-recipe-button {
+    background-color: #4CAF50; /* צבע ירוק */
+    color: white;
+    border: none;
+}
+
+.delete-recipe-button {
+    background-color: #f44336; /* צבע אדום */
+    color: white;
+    border: none;
+}
+
+
+#recipe-detail-section {
+    padding: 20px;
+    border: 1px solid #ccc;
+    margin: 20px auto;
+    width: 80%;
+    max-width: 800px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+    text-align: right;
+}
+
+#recipe-detail-section h2 {
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #333;
+    text-align: center;
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 10px;
+}
+
+#recipe-detail-section p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+#recipe-detail-section img {
+    width: 200px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+
+}
+
+#recipe-detail-section p strong {
+    color: #333;
+}
+
+#recipe-detail-section .ingredients, #recipe-detail-section .instructions {
+    margin: 20px 0;
+}
+
+#recipe-detail-section .instructions {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#recipe-detail-section .instructions h3 {
+    margin-top: 0;
+    font-size: 20px;
+    color: #333;
+}
+
+#recipe-detail-section button {
+    display: block;
+    width: 200px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#recipe-detail-section button:hover {
+    background-color: #555;
+}
+
+
+#filters {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#filters label {
+    font-weight: bold;
+    margin: 0 10px;
+}
+
+#filters select, #filters input, #filters button {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    margin: 0 10px;
+}
+
+#filters button {
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#filters button:hover {
+    background-color: #555;
+}
+
+#intro-section {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100vh;
+    background-image: url('back.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    text-align: left; /* יישור הטקסט לשמאל */
+    color: white;
+    padding-left: 50px;
+}
+
+#intro-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(109, 108, 108, 0.642);
+}
+
+.intro-text {
+    position: relative;
+    z-index: 1;
+    max-width: 600px;
+    margin-right: 750px;
+}
+
+.intro-text h1 {
+    font-size: 90px;
+    margin: 0;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.intro-text p {
+    font-size: 30px;
+    margin: 20px 0;
+    font-family: 'Arial', sans-serif;
+}
+
+#enter-site-button {
+    padding: 20px 40px;
+    font-size: 20px;
+    background-color: #272626;
+    color: rgb(255, 255, 255);
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
+    width: 300px;
+}
+
+#intro-section table {
+    background-color: white; /* שינוי רקע הטבלה ללבן */
+    color: black; /* שינוי צבע הטקסט לשחור */
+    width: 100%; /* הגדרת רוחב של 100% */
+    text-align: center; /* יישור מרכזי של הטקסט */
+}
+
+#add-recipe-button {
+    background-color: #4CAF50; /* צבע ירוק */
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: none; /* מוסתר כברירת מחדל */
+}
+
+#add-recipe-button.show {
+    display: flex; /* הצגה של הכפתור */
+}
+
+#add-recipe-button:hover {
+    background-color: #45a049;
+    transform: scale(1.1);
+}
