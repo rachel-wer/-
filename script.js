@@ -241,30 +241,30 @@ document.addEventListener('DOMContentLoaded', () => {
         recipeDetailSection.style.display = 'none';
         editingRecipeId = recipe.id;
     }
+function displayRecipe(recipe) {
+    recipeDetailSection.innerHTML = `
+        <h2>${recipe.name}</h2>
+        <img src="${recipe.image || getCategoryImage(recipe.category)}" alt="${recipe.category}" class="recipe-image">
+        <p><strong>מצרכים:</strong> <span id="recipe-ingredients" style="white-space: pre-line;">${recipe.ingredients}</span></p>
+        <p><strong>רמת קושי:</strong> ${recipe.level}</p>
+        <p><strong>שם הממציא:</strong> ${recipe.creator}</p>
+        <div class="instructions">
+            <h3>הוראות:</h3>
+            <p id="recipe-instructions-display" style="white-space: pre-line;">${recipe.instructions}</p>
+        </div>
+        <button id="back-to-recipes">חזור למתכונים</button>
+    `;
+    recipeDetailSection.style.display = 'block';
+    allRecipesSection.style.display = 'none';
+    myRecipesSection.style.display = 'none';
+    recipeFormSection.style.display = 'none';
 
-    function displayRecipe(recipe) {
-        recipeDetailSection.innerHTML = `
-            <h2>${recipe.name}</h2>
-            <img src="${recipe.image || getCategoryImage(recipe.category)}" alt="${recipe.category}" class="recipe-image">
-            <p><strong>מצרכים:</strong> ${recipe.ingredients}</p>
-            <p><strong>רמת קושי:</strong> ${recipe.level}</p>
-            <p><strong>שם הממציא:</strong> ${recipe.creator}</p>
-            <div class="instructions">
-                <h3>הוראות:</h3>
-                <p id="recipe-instructions-display" style="white-space: pre-line;">${recipe.instructions}</p>
-            </div>
-            <button id="back-to-recipes">חזור למתכונים</button>
-        `;
-        recipeDetailSection.style.display = 'block';
-        allRecipesSection.style.display = 'none';
-        myRecipesSection.style.display = 'none';
-        recipeFormSection.style.display = 'none';
+    document.getElementById('back-to-recipes').addEventListener('click', () => {
+        recipeDetailSection.style.display = 'none';
+        allRecipesSection.style.display = 'block';
+    });
+}
 
-        document.getElementById('back-to-recipes').addEventListener('click', () => {
-            recipeDetailSection.style.display = 'none';
-            allRecipesSection.style.display = 'block';
-        });
-    }
 
     function deleteRecipe(recipeId) {
         userRecipes = userRecipes.filter(recipe => recipe.id !== recipeId);
